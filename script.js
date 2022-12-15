@@ -20,8 +20,6 @@ function playRound(playerSelection, computerSelection){
 
     if (playerSelection === computerSelection) {
         console.log("You tied this round")
-        score();
-        resetChoices();
         return;
     }
     else {
@@ -29,17 +27,11 @@ function playRound(playerSelection, computerSelection){
         || (playerSelection === "Paper" && computerSelection === "Scissors")
         || (playerSelection === "Scissors" && computerSelection === "Rock")){
             console.log("You lost this round")
-            score();
-            resetChoices();
-            
             return computerScore += 1;
         }
 
         else {
             console.log("You won this round")
-            score();
-            resetChoices();
-            
             return playerScore += 1;
         }
     }
@@ -60,6 +52,8 @@ function resetChoices(){
 function game(){
     for (let i = 0; i < 5; i++){
         playRound(playerChoice, computerChoice);
+        score();
+        resetChoices();
     }
 }
 
