@@ -42,24 +42,18 @@ function score(a = playerScore, b = computerScore){
     console.log("You're score: " + a + "\n" + "Enemy score: " + b)
 }
 
-//Reset choices
-function resetChoices(){
-    playerChoice = getPlayerChoice();
-    computerChoice = getComputerChoice();
-}
-
 //Game Algorithm
 function game(){
     for (let i = 0; i < 5; i++){
+        let playerChoice = getPlayerChoice();
+        let computerChoice = getComputerChoice();
         playRound(playerChoice, computerChoice);
         score();
-        resetChoices();
     }
 }
 
 let playerScore = 0; 
 let computerScore = 0;
-let playerChoice = getPlayerChoice();
-let computerChoice = getComputerChoice();
+
 
 game();
