@@ -44,16 +44,23 @@ function score(a = playerScore, b = computerScore){
 
 //Game Algorithm
 function game(){
-    for (let i = 0; i < 5; i++){
+ //   for (let i = 0; i < 5; i++){
         let playerChoice = getPlayerChoice();
         let computerChoice = getComputerChoice();
         playRound(playerChoice, computerChoice);
         score();
-    }
+//  }
 }
 
 let playerScore = 0; 
 let computerScore = 0;
 
+//Cycles thru each button to check if there was an input.
+const choices = document.querySelectorAll('button')
+choices.forEach( (button) => {
+    button.addEventListener('click', () => {
+        console.log(button.className);
+    })
+})
 
 game();
