@@ -1,13 +1,14 @@
 
 //Prompts user choice input 
-function getPlayerChoice() {
+/*function getPlayerChoice() {
     let userInput = prompt("Rock, Paper, Scissors");
     return userInput.charAt(0).toUpperCase() + userInput.slice(1).toLowerCase();
 }
+*/
 
 //Computer decides
 function getComputerChoice() {
-    const choices = [ "Rock", "Paper", "Scissors" ];
+    const choices = [ "rock", "paper", "scissors" ];
     let index = Math.floor(Math.random()*3) 
     return choices[index]
 }
@@ -23,9 +24,9 @@ function playRound(playerSelection, computerSelection){
         return;
     }
     else {
-        if ((playerSelection === "Rock" && computerSelection === "Paper")
-        || (playerSelection === "Paper" && computerSelection === "Scissors")
-        || (playerSelection === "Scissors" && computerSelection === "Rock")){
+        if ((playerSelection === "rock" && computerSelection === "paper")
+        || (playerSelection === "paper" && computerSelection === "scissors")
+        || (playerSelection === "scissors" && computerSelection === "rock")){
             console.log("You lost this round")
             return computerScore += 1;
         }
@@ -57,10 +58,10 @@ let computerScore = 0;
 
 //Cycles thru each button to check if there was an input.
 const choices = document.querySelectorAll('button')
-choices.forEach( (button) => {
-    button.addEventListener('click', () => {
-        console.log(button.className);
+choices.forEach( (button) => 
+    button.addEventListener('click', () =>{
+        playRound(button.className, getComputerChoice());
     })
-})
+);
 
-game();
+//game();
