@@ -6,6 +6,10 @@ const pScore = document.createElement('p')
 const pcScore = document.createElement('p')
 const results = document.createElement('h3')
 
+pScore.classList.add('pScore')
+pcScore.classList.add('pcScore')
+results.classList.add('results')
+
 //Computer decides
 function getComputerChoice() {
     const choices = [ "rock", "paper", "scissors" ];
@@ -17,7 +21,7 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection){
 
     pScore.textContent = "You chose: " + playerSelection;
-    pcScore.textContent = "The enemy chose: " + computerSelection;
+    pcScore.textContent = "The computer chose: " + computerSelection;
     playArea.append(pScore, pcScore)
 
     if (playerSelection === computerSelection) {
@@ -69,7 +73,7 @@ const choices = document.querySelectorAll('button')
 choices.forEach( (button) => 
     button.addEventListener('click', () =>{
 
-        playRound(button.className, getComputerChoice());
+        playRound(button.textContent.toLowerCase(), getComputerChoice());
         score();
     })
 );

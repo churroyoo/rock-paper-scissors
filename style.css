@@ -1,0 +1,62 @@
+body {
+    margin: 8px 24px;
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: rgb(248, 250, 251);
+}
+
+h1{
+    text-align: center;
+}
+
+h4,
+h5,
+h3,
+p{
+    margin: 0;
+    text-align: center;
+}
+
+h4{
+    margin-bottom: 16px;
+}
+
+.buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+
+}
+
+.button{
+    flex: auto;
+    width: 3vw;
+    max-width: 240px;
+    padding: 8px;
+    background-color: rgb(245, 245, 255);
+    border-radius: 8px;
+    border: 1.5px solid rgb(171, 171, 231);
+}
+
+.scoreBoard {
+    background-color: rgb(246, 252, 255);
+    border: .5px solid rgb(112, 180, 220);
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 32px;
+}
+
+.scores{
+    display: flex;
+    justify-content: center;
+    gap: 88px;
+}
+
+.pScore,
+.pcScore {
+    margin-top: 8px;
+}
+
+.pScore,
+.results{
+    margin-top: 32px;
+}
