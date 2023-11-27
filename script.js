@@ -19,13 +19,11 @@ let numberToChoice = (number) => {
                 
                 return choice
 }
-            
 let computerSelection = () => numberToChoice(generateNumber())
 
 // The player will input a command (string)
 // The code should standardize the command and make it case insensitive
 let playerSelection = () => prompt("Make a selection: Rock, Paper, Scissors", "paper").toLowerCase()
-
 
 // The code should check to see if computer and player both have a selection
 // The code will compare to see who won
@@ -45,7 +43,28 @@ function playRound(playerSelection, computerSelection){
 
 // The winner will increment in their score value
 function game() {
-    for (let round = 0; round < 5; round++)
-    console.log(playRound(playerSelection(), computerSelection()))
+    let playerScore = 0
+    let computerScore = 0
+
+    for (let round = 0; round < 5; round++){
+        let results = playRound(playerSelection(), computerSelection())
+
+        if (results === "You lost!") {
+            computerScore++
+            console.log(`${results} 
+            Your score:${playerScore} 
+            PC's score:${computerScore} `)
+
+        }else if (results === "You won!") {
+            playerScore++
+            console.log(`${results} 
+            Your score:${playerScore} 
+            PC's score:${computerScore} `)
+        }else{
+            console.log(`${results} 
+            Your score:${playerScore} 
+            PC's score:${computerScore} `)
+        }
+    }
 }
 game()
