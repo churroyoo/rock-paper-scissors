@@ -27,9 +27,22 @@ let numberToChoice = (number) => {
 let playerSelection = prompt("Make a selection: Rock, Paper, Scissors", "paper")
 // The code should standardize the command and make it case insensitive
 let standardizeSelection = (selection) => selection.toLowerCase()
+
 console.log(standardizeSelection(playerSelection))
 console.log(computerSelection())
 // The code should check to see if computer and player both have a selection
+function playRound(playerSelection, computerSelection){
+    if (playerSelection === computerSelection){
+        console.log("It's a tie!")
+    }else if 
+    (playerSelection === "rock" && computerSelection === "paper" ||
+    playerSelection === "scissors" && computerSelection === "rock" ||
+    playerSelection === "paper" && computerSelection === "scissors" ){
+        console.log("You lost!")
+    }else{
+        console.log("You won!")
+    }
+}
 // The code will compare to see who won
 // The code will declare a winner
 // The winner will increment in their score value
