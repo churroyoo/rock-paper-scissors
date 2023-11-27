@@ -44,8 +44,8 @@ function playRound(playerSelection, computerSelection){
 }
 
 // The winner will increment in their score value
-function mainGame() {
+function game() {
     for (let round = 0; round < 5; round++)
     console.log(playRound(playerSelection(), computerSelection()))
 }
-mainGame()
+game()
