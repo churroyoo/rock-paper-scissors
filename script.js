@@ -5,19 +5,18 @@ let numberToChoice = (number) => {
     
     switch (number){
         case 1:
-            choice = "rock"
-            break;
-            
-            case 2:
-                choice = "paper"
-                break;
-                
-                case 3:
-                    choice = "scissors"
-                    break;
-                } 
-                
-                return choice
+        choice = "rock"
+        break;
+        
+        case 2:
+        choice = "paper"
+        break;
+        
+        case 3:
+        choice = "scissors"
+        break;
+    } 
+    return choice
 }
 let computerSelection = () => numberToChoice(generateNumber())
 
