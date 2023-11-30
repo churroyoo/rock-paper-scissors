@@ -1,6 +1,8 @@
+const buttons = document.querySelector("#buttons")
+
 // The computer will make a random selection between rock paper scissors
-let generateNumber = () => Math.ceil(Math.random() * 3)
-let numberToChoice = (number) => {
+function genRandomNumber() {return Math.ceil(Math.random() * 3)}
+function numberToChoice(number){
     let choice = ""
     
     switch (number){
@@ -18,28 +20,14 @@ let numberToChoice = (number) => {
     } 
     return choice
 }
-let computerSelection = () => numberToChoice(generateNumber())
+function getComputerChoice() {return numberToChoice(genRandomNumber())}
 
-
-let playerSelection;
-let buttons = document.querySelector("#buttons")
+// The player will press a button
+//we will save that buttons class as their choice
+function getPlayerChoice(event) {return playerChoice = event.target.id;}
 
 buttons.addEventListener("click", (event) => {
-    let targetId = event.target.id
-
-    switch (targetId) {
-        case "rock":
-        
-        break;
-
-        case "paper":
-        
-        break;
-
-        case "scissors":
-        
-        break;
-    }
+    console.log(getPlayerChoice(event))
 });
 
 
