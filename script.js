@@ -27,24 +27,39 @@ let buttons = document.querySelector("#buttons")
 
 buttons.addEventListener("click", (event) => {
     let target = event.target.id
-    
+    let display = document.querySelector("#results")
+    let resultTextBox = document.createElement("p")
+    let winner;
+
     switch (target) {
         case "rock":
         playerSelection = "rock"
-        console.log(`You chose: ${playerSelection}`)
-        console.log(playRound(playerSelection, computerSelection()))
+        winner = playRound(playerSelection, computerSelection())
+        resultTextBox.textContent = `
+        You chose: ${playerSelection}
+        PC chose: ${computerSelection}
+        ${winner}`
+        display.appendChild(resultTextBox)
         break;
 
         case "paper":
-        playerSelection = "paper"
-        console.log(`You chose: ${playerSelection}`)
-        console.log(playRound(playerSelection, computerSelection()))
+        playerSelection = "paper"        
+        winner = playRound(playerSelection, computerSelection())
+        resultTextBox.textContent = `
+        You chose: ${playerSelection}
+        PC chose: ${computerSelection}
+        ${winner}`
+        display.appendChild(resultTextBox)
         break;
 
         case "scissors":
         playerSelection = "scissors"
-        console.log(`You chose: ${playerSelection}`)
-        console.log(playRound(playerSelection, computerSelection()))
+        winner = playRound(playerSelection, computerSelection())
+        resultTextBox.textContent = `
+        You chose: ${playerSelection}
+        PC chose: ${computerSelection}
+        ${winner}`
+        display.appendChild(resultTextBox)
         break;
     }
 });
